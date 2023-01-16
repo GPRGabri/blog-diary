@@ -1,19 +1,23 @@
-<%- include("partials/header") -%>
 
+<%- include("partials/header") -%>
 <h1>Home</h1>
 <p><%= homeContent  %></p>
 
 
-
-
 <% posts.forEach(function(post){ %>
-    <%   console.log(post.Title); %>
-    <h1><%= post.Title  %></h1>
-    <p><%= post.Content.substring(0,100) + " ..."  %> <a href="/posts/<%= post.Title  %>" >Read more</a></p> 
-    <% }); %>
+
+    <h1><%= post.name  %></h1>
+    <p>
+    <%= post.content.substring(0,100) + " ..."  %> 
+    <a href="/posts/<%= post._id  %>" >Read more</a>
+    </p> 
+    
 
 
+    <% }) %>
 
-
+    <div class="floating-container" >
+        <button type="button" class="floating-button" onClick="location.href='/compose';">+</button>
+    </div>
 
 <%- include("partials/footer") -%>
